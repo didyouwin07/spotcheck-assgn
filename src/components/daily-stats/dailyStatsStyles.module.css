@@ -1,0 +1,60 @@
+.wrapper {
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    color: black;
+  }
+  
+  .aboutSection {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .icon {
+    font-size: 18px;
+    color: #4caf50;
+  }
+  
+  .bodySection {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1vw;
+  }
+  
+.todaysNumber {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    align-self: flex-end;
+  }
+  
+  .changeSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 1vw;
+  }
+  
+  .changeSection span {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .positive {
+    color: #4caf50;
+  }
+  
+  .negative {
+    color: #f44336;
+  }
+  

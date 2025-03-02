@@ -1,0 +1,105 @@
+/* dashboardStyles.module.css */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+  color: black;
+}
+
+.dashboardContainer {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  height: 100vh;
+  color: white;
+  border-radius: 20rem !important;
+}
+
+.menuType {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 5vh;
+}
+
+.menuTypeText {
+  font-size: 12px;
+  padding-left: 30px;
+  padding-right: 20px;
+  opacity: 0.7;
+  text-transform: uppercase;
+}
+
+.menuDivider {
+  background-color: white;
+  height: 1px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.7;
+  margin-left: 30px;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f3f4f6;
+}
+
+.dashboardHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #1e293b;
+  font-size: 32px;
+}
+
+.goProImageContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.dailyStatsSection {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 16px; 
+    padding: 16px;
+  }
+
+  .salesSection{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 16px; 
+    padding: 16px;
+  }
+  
+  @media (max-width: 900px) {
+    .dailyStatsSection {
+      grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .salesSection{
+        grid-template-columns: repeat(1, 1fr); 
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .dailyStatsSection {
+      grid-template-columns: repeat(1, 1fr); 
+    }
+
+    .salesSection{
+        grid-template-columns: repeat(1, 1fr); 
+    }
+  }
