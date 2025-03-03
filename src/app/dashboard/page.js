@@ -1,6 +1,6 @@
 "use client";
 import styles from "./dashboardStyles.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import {
   FaHome,
@@ -17,9 +17,21 @@ import Image from "next/image";
 import DailyStat from "@/components/daily-stats";
 import SalesAnalytics from "@/components/analytics";
 import SalesByCategory from "@/components/pie-chart";
+import { useRouter } from "next/navigation";
 
 const Dashboard = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleResize = () => {
+      setCollapsed(window.innerWidth <= 768);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className={styles.dashboardContainer}>
@@ -32,17 +44,49 @@ const Dashboard = () => {
         <div className={styles.menuType}>
           <div className={styles.menuTypeText}>Menu</div>
         </div>
-        <Menu iconShape="circle">
+        <Menu
+          menuItemStyles={{
+            button: ({ level, active, disabled }) => {
+              if (level === 0 || level === 1) {
+                return {
+                  backgroundColor: level ? "#335B8C !important" : null,
+                  "&:hover": {
+                    backgroundColor: "#335B8C !important",
+                    color: "white !important",
+                    opacity: "0.9 !important",
+                  },
+                };
+              }
+            },
+          }}
+          iconShape="circle"
+        >
           <MenuItem icon={<FaHome />} onClick={() => setCollapsed(!collapsed)}>
             Dashboard
           </MenuItem>
-          <MenuItem icon={<FaChartBar />}>Products</MenuItem>
+          <MenuItem
+            icon={<FaChartBar />}
+            onClick={() => router.push("/products")}
+          >
+            Products
+          </MenuItem>
           <SubMenu label="Orders" icon={<FaClipboardList />}>
-            <MenuItem icon={<FaUser />}>Profile</MenuItem>
-            <MenuItem>Preferences</MenuItem>
+            <MenuItem icon={<FaUser />} onClick={() => router.push("/profile")}>
+              Profile
+            </MenuItem>
+            <MenuItem onClick={() => router.push("/preferences")}>
+              Preferences
+            </MenuItem>
           </SubMenu>
-          <MenuItem icon={<FaMoneyBillWave />}>Sales</MenuItem>
-          <MenuItem icon={<FaStar />}>Reviews</MenuItem>
+          <MenuItem
+            icon={<FaMoneyBillWave />}
+            onClick={() => router.push("/sales")}
+          >
+            Sales
+          </MenuItem>
+          <MenuItem icon={<FaStar />} onClick={() => router.push("/reviews")}>
+            Reviews
+          </MenuItem>
 
           <div className={styles.menuDivider} />
 
@@ -51,7 +95,12 @@ const Dashboard = () => {
           </div>
 
           <MenuItem icon={<FaCog />}>Settings</MenuItem>
-          <MenuItem icon={<FaSignOutAlt />}>Logout</MenuItem>
+          <MenuItem
+            icon={<FaSignOutAlt />}
+            onClick={() => router.push("/login")}
+          >
+            Logout
+          </MenuItem>
 
           <div
             className={styles.goProImageContainer}
@@ -70,7 +119,11 @@ const Dashboard = () => {
         </Menu>
       </Sidebar>
 
-      <main className={styles.mainContent}>
+      <main
+        className={`${styles.mainContent} ${
+          collapsed ? styles.mainContentCollapsed : styles.mainContentExpanded
+        }`}
+      >
         <div className={styles.dashboardHeader}>
           <Image
             src="/icons/menu-icon.svg"
@@ -90,8 +143,8 @@ const Dashboard = () => {
           <DailyStat title="Today's Products" />
         </div>
         <div className={styles.salesSection}>
-            <SalesAnalytics title="Sales Analytics" color="#FF8548" />
-            <SalesByCategory />
+          <SalesAnalytics title="Sales Analytics" color="#FF8548" />
+          <SalesByCategory />
         </div>
       </main>
     </div>

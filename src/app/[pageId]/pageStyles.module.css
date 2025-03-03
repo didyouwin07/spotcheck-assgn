@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .icon {
+    font-size: 80px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .titleText {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .subText {
+    font-size: 16px;
+    color: #666;
+  }
+  

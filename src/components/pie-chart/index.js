@@ -25,54 +25,54 @@ export default function SalesByCategory() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <div className={styles.titleText}>Sales by Category</div>
-        <select className={styles.dropdown} value={timeframe} onChange={(e) => setTimeframe(e.target.value)}>
-          <option value="Week">Week</option>
-          <option value="Month">Month</option>
-          <option value="Year">Year</option>
-        </select>
-      </div>
+  <div className={styles.header}>
+    <div className={styles.titleText}>Sales by Category</div>
+    <select className={styles.dropdown} value={timeframe} onChange={(e) => setTimeframe(e.target.value)}>
+      <option value="Week">Week</option>
+      <option value="Month">Month</option>
+      <option value="Year">Year</option>
+    </select>
+  </div>
 
-      <div className={styles.content}>
-        <div className={styles.chartContainer}>
-          <PieChart width={300} height={300}>
-            <Pie
-              data={data}
-              dataKey="value"
-              cx="50%"
-              cy="50%"
-              innerRadius={70}
-              outerRadius={120}
-              fill="#8884d8"
-              paddingAngle={3}
-            >
-              {data.map((entry, index) => (
-                <Cell key={index} fill={entry.color} />
-              ))}
-            </Pie>
-            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" className={styles.totalSales}>
-              ${totalSales}
-            </text>
-            <Tooltip />
-          </PieChart>
-        </div>
-
-        <div className={styles.legend}>
-          {data.map((entry, index) => {
-            const percentage = ((entry.value / totalSales) * 100).toFixed(1);
-            return (
-              <div key={index} className={styles.legendItem}>
-                <span className={styles.colorBox} style={{ backgroundColor: entry.color }}></span>
-                <div className={styles.categoryInfo}>
-                  <span className={styles.categoryName}>{entry.name} ({percentage}%)</span>
-                  <span className={styles.salesValue}>{entry.value} CATEGORY PRODUCTS</span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
+  <div className={styles.content}>
+    <div className={styles.chartContainer}>
+      <PieChart width={220} height={220}>
+        <Pie
+          data={data}
+          dataKey="value"
+          cx="50%"
+          cy="50%"
+          innerRadius={50}
+          outerRadius={90}
+          fill="#8884d8"
+          paddingAngle={3}
+        >
+          {data.map((entry, index) => (
+            <Cell key={index} fill={entry.color} />
+          ))}
+        </Pie>
+        <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" className={styles.totalSales}>
+          ${totalSales}
+        </text>
+        <Tooltip />
+      </PieChart>
     </div>
+
+    <div className={styles.legend}>
+      {data.map((entry, index) => {
+        const percentage = ((entry.value / totalSales) * 100).toFixed(1);
+        return (
+          <div key={index} className={styles.legendItem}>
+            <span className={styles.colorBox} style={{ backgroundColor: entry.color }}></span>
+            <div className={styles.categoryInfo}>
+              <span className={styles.categoryName}>{entry.name} ({percentage}%)</span>
+              <span className={styles.salesValue}>{entry.value} CATEGORY PRODUCTS</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</div>
   );
 }

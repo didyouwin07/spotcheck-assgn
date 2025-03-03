@@ -1,82 +1,93 @@
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    color: black;
+  width: 100%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  color: black;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 220px;
   }
-  
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .titleText {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  
-  .dropdown {
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
-    background-color: white;
-    color: black;
-  }
-  
-  .content {
-    display: flex;
-    align-items: center;
-  }
-  
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dropdown {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background-color: white;
+  color: black;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.chartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
   .chartContainer {
-    position: relative;
+    width: 220px;
+    height: 220px;
   }
-  
-  .totalSales {
-    font-size: 18px;
-    font-weight: bold;
-    fill: black;
-  }
-  
-  .legend {
-    margin-left: 20px;
-    display: flex;
+
+  .content{
     flex-direction: column;
   }
-  
-  .legendItem {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  
-  .colorBox {
-    width: 14px;
-    height: 14px;
-    margin-right: 8px;
-    border-radius: 4px;
-  }
-  
-  .categoryInfo {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .categoryName {
-    font-size: 14px;
-    font-weight: bold;
-  }
-  
-  .salesValue {
-    font-size: 8px;
-    color: rgba(0, 0, 0, 0.6);
-  }
-  
+}
+
+.totalSales {
+  font-size: 16px;
+  font-weight: bold;
+  fill: #333;
+}
+
+.legend {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.colorBox {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.categoryInfo {
+  font-size: 12px;
+}
+
+.categoryName {
+  font-weight: bold;
+  color: #333;
+}
+
+.salesValue {
+  font-size: 10px;
+  color: #777;
+}

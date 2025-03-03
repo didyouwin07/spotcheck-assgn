@@ -58,3 +58,12 @@
     color: #f44336;
   }
   
+  @media (max-width: 600px) {
+    .wrapper{
+      width: 220px;
+    }
+
+    .todaysNumber{
+      font-size: 32px;
+    }
+  }

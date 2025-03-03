@@ -11,13 +11,21 @@
 
 .dashboardContainer {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 .sidebar {
+  position: fixed !important;
   height: 100vh;
   color: white;
-  border-radius: 20rem !important;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 80px !important;
+    overflow: hidden;
+  }
 }
 
 .menuType {
@@ -54,6 +62,14 @@
   background-color: #f3f4f6;
 }
 
+.mainContentCollapsed {
+  margin-left: 80px;
+}
+
+.mainContentExpanded {
+  margin-left: 250px;
+}
+
 .dashboardHeader {
   display: flex;
   flex-direction: row;
@@ -62,44 +78,48 @@
   font-size: 32px;
 }
 
-.goProImageContainer{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5vh;
+.goProImageContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
 }
 
 .dailyStatsSection {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 16px; 
-    padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.salesSection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+@media (max-width: 900px) {
+  .dailyStatsSection {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .salesSection{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 16px; 
-    padding: 16px;
+  .salesSection {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  @media (max-width: 900px) {
-    .dailyStatsSection {
-      grid-template-columns: repeat(2, 1fr); 
-    }
+}
 
-    .salesSection{
-        grid-template-columns: repeat(1, 1fr); 
-    }
+@media (max-width: 600px) {
+  .dailyStatsSection {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  @media (max-width: 600px) {
-    .dailyStatsSection {
-      grid-template-columns: repeat(1, 1fr); 
-    }
 
-    .salesSection{
-        grid-template-columns: repeat(1, 1fr); 
-    }
+  .salesSection {
+    grid-template-columns: repeat(1, 1fr);
   }
+
+  .sidebar {
+    width: 60px !important;
+  }
+}
