@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project Name
 
-## Getting Started
+This is a **Next.js** project that runs on **Node.js version 23**.
 
-First, run the development server:
+## Screenshots
 
+### **Desktop View**
+#### Login Page
+![Desktop Login](./public/screenshots/login-desktop.jpg)
+
+#### Dashboard (Collapsed Sidebar)
+![Desktop Dashboard Collapsed](./public/screenshots/dashboard-desktop-collapsed.jpg)
+
+#### Dashboard (Non-Collapsed Sidebar)
+![Desktop Dashboard Non-Collapsed](./public/screenshots/dashboard-desktop.jpg)
+
+### **Mobile View**
+#### Login Page
+![Mobile Login](./public/screenshots/login-mobile.jpg)
+
+#### Dashboard (Collapsed Sidebar)
+![Mobile Dashboard Collapsed](./public/screenshots/dashboard-mobile.jpg)
+
+### **Pages Under Construction**
+#### Desktop View
+![Desktop Construction](./public/screenshots/wip-desktop.jpg)
+
+#### Mobile View
+![Mobile Construction](./public/screenshots/wip-mobile.jpg)
+
+## How to Run This Project
+
+### **1. Clone the Repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd <repository-folder>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### **2. Install Dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### **3. Run the Project**
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project will be available at: [http://localhost:3000](http://localhost:3000)
 
-## Learn More
+## **Login Credentials**
+- **Email:** `test@gmail.com`
+- **Password:** `password123`
 
-To learn more about Next.js, take a look at the following resources:
+Use these credentials to log in and explore the dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
