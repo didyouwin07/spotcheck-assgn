@@ -32,8 +32,8 @@ This is a **Next.js** project that runs on **Node.js version 23**.
 
 ### **1. Clone the Repository**
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone [spotcheck-assgn](https://github.com/didyouwin07/spotcheck-assgn.git)
+cd spotcheck-assgn
 ```
 
 ### **2. Install Dependencies**
